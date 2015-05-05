@@ -1,4 +1,7 @@
 sudo: false
+before_script:
+  - npm install -g bower
+  - bower install
 language: node_js
 node_js:
   - iojs
