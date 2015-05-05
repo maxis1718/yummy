@@ -69,6 +69,19 @@ gulp.task('extras', function () {
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
 
+var dist_port = process.env.PORT || 6174;
+gulp.task('serve:dist', ['default'], function () {
+  browserSync({
+    notify: false,
+    // Run as an https by uncommenting 'https: true'
+    // Note: this uses an unsigned certificate which on first access
+    //       will present a certificate warning in the browser.
+    // https: true,
+    server: 'dist',
+    port: dist_port
+  });
+});
+
 gulp.task('serve', ['styles', 'fonts'], function () {
   browserSync({
     notify: false,
