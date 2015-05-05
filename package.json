@@ -1,5 +1,8 @@
 {
   "private": true,
+  "name": "yummy",
+  "version": "0.1.0",
+  "description": "",
   "engines": {
     "node": ">=0.10.0"
   },
