@@ -28,5 +28,8 @@
     "opn": "^1.0.0",
     "pre-commit": "^1.0.7",
     "wiredep": "^2.0.0"
-  }
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }
