@@ -2,6 +2,7 @@
 'use strict';
 // generated on 2015-05-02 using generator-gulp-webapp 0.3.0
 var gulp = require('gulp');
+var mocha = require('gulp-mocha');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -65,6 +66,11 @@ gulp.task('extras', function () {
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
+});
+
+gulp.task('mocha', function () {
+  return gulp.src('./test/*.js')
+    .pipe(mocha({ reporter: 'list' }));
 });
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
